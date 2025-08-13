@@ -63,4 +63,12 @@ describe('NumberList', () => {
 
         expect(container).toBeEmptyDOMElement();
     });
+
+    test('can add numbers', () => {
+        state.list.push(1, 2, 3);
+
+        const { container } = state.react.render(<NumberList />);
+
+        expect(container).toContainHTML('<p>1</p><p>2</p><p>3</p>');
+    });
 });
